@@ -14,3 +14,31 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+$primary-background: red;
+$primary-link: red;
+
+.button--default {
+    background: transparent;
+    box-shadow: none;
+    color: red;
+    font-size: 12px;
+}
+
+.scroll-content {
+    box-sizing: border-box;
+}
+
+.cta--default {
+    background: $primary-background;
+}
+
+.link--default {
+    color: $primary-link;
+}
+
+.title--default {
+    text-align: left;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 600;
+}

@@ -1,0 +1,28 @@
+<ion-header class="universal-header">
+    <ion-grid>
+        <ion-row>
+            <ion-col col-2>
+                <button ion-button icon-only class="button--default button--login" (click)="checkSessionStatus()">
+                <ion-icon name="power"></ion-icon>
+                </button>
+            </ion-col>
+            <ion-col col-4>
+            </ion-col>
+            <ion-col col-2>
+                <button ion-button icon-only class="button--default button--feedback" (click)="openFeedbackModal()">
+                    <ion-icon name="quote"></ion-icon>
+                </button>
+            </ion-col>
+            <ion-col col-2>
+                <button ion-button icon-only class="button--default button--profile" (click)="goToCurrentUserProfile()">
+                    <ion-icon name="person"></ion-icon>
+                </button>
+            </ion-col>
+            <ion-col col-2>
+                <button ion-button icon-only class="button--default button--location" (click)="toggleLocator()">
+                    <ion-icon name="locate"></ion-icon>
+                </button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-header>

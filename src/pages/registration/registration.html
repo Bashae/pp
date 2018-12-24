@@ -1,0 +1,50 @@
+<ion-content padding>
+    <ion-slides>
+        <ion-slide>
+            <div>
+                <h1 class="title--default  title--email">Let's start with your login information.</h1>
+                <ion-list>
+                    <ion-item>
+                        <ion-label stacked>Email</ion-label>
+                        <ion-input type="email"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label stacked>Password</ion-label>
+                        <ion-input type="password"></ion-input>
+                    </ion-item>
+                    <button class="cta--default" (click)="submitEmailAndPassword()" ion-button round>Next</button>
+                </ion-list>
+            </div>
+        </ion-slide>
+        <ion-slide>
+            <div style="height: 65%;">
+                <h1 class="title--default">Which team do you represent?</h1>
+                <ul class="container--team">
+                    <li class="select--instinct"><img src="assets/imgs/team-instinct-inverse.svg" alt=""></li>
+                    <li class="select--mystic"><img src="assets/imgs/team-mystic-inverse.svg" alt=""></li>
+                    <li class="select--valor"><img src="assets/imgs/team-valor-inverse.svg" alt=""></li>
+                </ul>
+                <button class="cta--default" (click)="submitEmailAndPassword()" ion-button round>Next</button>
+            </div>
+        </ion-slide>
+        <ion-slide>
+            <ion-list>
+                <h2 class="title--default">What should others know about you?</h2>
+                <!-- <p class="sub-context">This info is optional.</p> -->
+                <ion-item>
+                    <ion-label stacked>What should people call you in person?</ion-label>
+                    <ion-input type="text" value=""></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label stacked>What's your Username?</ion-label>
+                    <ion-input type="text" value=""></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label stacked>What's your Friend Code?</ion-label>
+                    <ion-input type="text" value=""></ion-input>
+                </ion-item>
+                <button class="cta--default" (click)="submitEmailAndPassword()" ion-button round>Finished</button>
+            </ion-list>
+        </ion-slide>
+    </ion-slides>
+</ion-content>

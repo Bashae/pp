@@ -1,0 +1,28 @@
+page-landing {
+    display: flex;
+    position: relative;
+
+    .scroll-content {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+    .title--landing {
+        margin: 0 auto;
+        width: 75%;
+    }
+    .button--landing {
+        margin: 25px auto 0 auto;
+        width: 75%;
+    }
+    .closing--landing {
+        position: absolute;
+        bottom: 20px;
+    }
+
+    .icon--landing {
+        position: absolute;
+        top: 50px;
+        width: 10%;
+    }
+}
