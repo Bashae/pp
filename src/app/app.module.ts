@@ -22,6 +22,9 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { GoogleMaps } from '@ionic-native/google-maps';
 import { StreamProvider } from '../providers/stream/stream';
+import { UsersProvider } from '../providers/users/users';
+import { LoadingProvider } from '../providers/loading/loading';
+import { Geolocation } from '@ionic-native/geolocation';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyC_f0a9UhqZniUM87FtEKp32FbDJXI7wj8",
@@ -67,9 +70,12 @@ export const firebaseConfig = {
     AngularFirestore,
     AuthProvider,
     GeoProvider,
+    Geolocation,
     GoogleMaps,
     UserProvider,
-    StreamProvider
+    StreamProvider,
+    UsersProvider,
+    LoadingProvider
   ]
 })
 export class AppModule {}
