@@ -1,3 +1,16 @@
 <ion-content padding>
-
+    <div>
+        <h1 class="title--default  title--email">Let's start with your login information.</h1>
+        <ion-list>
+            <ion-item>
+                <ion-label stacked>Email</ion-label>
+                <ion-input type="email"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label stacked>Password</ion-label>
+                <ion-input type="password"></ion-input>
+            </ion-item>
+            <button class="cta--default" (click)="submitEmailAndPassword()" ion-button round>Next</button>
+        </ion-list>
+    </div>
 </ion-content>

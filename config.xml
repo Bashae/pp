@@ -86,4 +86,5 @@
         <variable name="APP_ID_ANDROID" value="ca-app-pub-8071301998700750/3005930389" />
     </plugin>
     <engine name="android" spec="7.1.4" />
+    <plugin name="cordova-plugin-firebase" spec="2.0.5" />
 </widget>

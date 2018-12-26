@@ -16,6 +16,19 @@ import { UserPage } from '../pages/user/user';
 import { LoginPage } from '../pages/login/login';
 import { RegistrationPage } from '../pages/registration/registration';
 
+// Firebase and Angularfire
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestore } from '@angular/fire/firestore';
+export const firebaseConfig = {
+  apiKey: "AIzaSyC_f0a9UhqZniUM87FtEKp32FbDJXI7wj8",
+  authDomain: "pogo-pal-1532794775743.firebaseapp.com",
+  databaseURL: "https://pogo-pal-1532794775743.firebaseio.com",
+  projectId: "pogo-pal-1532794775743",
+  storageBucket: "pogo-pal-1532794775743.appspot.com",
+  messagingSenderId: "530444738525"
+}
+
 @NgModule({
   declarations: [
     MyApp,
@@ -29,6 +42,7 @@ import { RegistrationPage } from '../pages/registration/registration';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig),
     ComponentsModule
   ],
   bootstrap: [IonicApp],
@@ -45,6 +59,9 @@ import { RegistrationPage } from '../pages/registration/registration';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AngularFireModule,
+    AngularFireAuth,
+    AngularFirestore,
     AuthProvider,
     GeoProvider,
     UserProvider
