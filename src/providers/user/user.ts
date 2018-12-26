@@ -7,6 +7,11 @@ export class UserProvider {
   }
 
   setUser(id) {
+  
+  }
+
+  unsetUser() {
+
   }
 
 }

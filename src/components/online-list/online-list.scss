@@ -1,3 +1,27 @@
 online-list {
+    ul {
+        display: block;
+        height: 75px;
+        list-style-type: none;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        padding: 0;
+        white-space: nowrap;
+        width: 100%;
 
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+    li {
+        display: inline-block;
+        height: 100%;
+        margin-left: 5px;
+        width: 75px;
+    }
+    img {
+        border-radius: 50%;
+        height: 100%;
+        width: 100%;
+    }
 }

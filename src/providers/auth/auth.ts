@@ -8,29 +8,32 @@ import { Credentials } from "../../app/credentials";
 export class AuthProvider {
   public user: firebase.User;
   public userId: string;
-  public isLoggedIn: boolean;
+  public isLoggedIn: boolean = false;
 
   constructor(
     public afAuth: AngularFireAuth,
     public userService: UserProvider
-  ) {
-    // this.checkAuth();
-  }
+  ) {}
 
   checkAuth() {
-    this.afAuth.authState.subscribe(user => {
-      user ? this.setUser(user, true) : this.setUser(user, false);
-    })
+    return this.afAuth.authState.subscribe();
   }
 
-  setUser(user, isLoggedIn) {
+  setUser(user) {
     // Set auth info
-    this.isLoggedIn = isLoggedIn;
+    this.isLoggedIn = true;
     this.user = user;
 
     // Set user info
-    this.userId = this.user.uid || null;
+    this.userId = this.user.uid;
     this.userService.setUser(this.user.uid);
+  }
+  
+  unsetUser() {
+    this.isLoggedIn = false;
+    this.user = null;
+    this.userId = null;
+    this.userService.unsetUser();
   }
 
   signInWithEmail(credentials: Credentials) {
@@ -42,6 +45,7 @@ export class AuthProvider {
   }
 
   logOut() {
+    this.unsetUser();
     return this.afAuth.auth.signOut();
   }
 

@@ -20,6 +20,8 @@ import { RegistrationPage } from '../pages/registration/registration';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { GoogleMaps } from '@ionic-native/google-maps';
+
 export const firebaseConfig = {
   apiKey: "AIzaSyC_f0a9UhqZniUM87FtEKp32FbDJXI7wj8",
   authDomain: "pogo-pal-1532794775743.firebaseapp.com",
@@ -64,6 +66,7 @@ export const firebaseConfig = {
     AngularFirestore,
     AuthProvider,
     GeoProvider,
+    GoogleMaps,
     UserProvider
   ]
 })

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthProvider } from '../../providers/auth/auth';
 
 @Component({
   selector: 'header',
@@ -6,9 +7,12 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
-  text: string;
+  constructor(
+    public auth: AuthProvider
+  ) {}
 
-  constructor() {
+  logUserOut() {
+    this.auth.logOut();
   }
 
 }
