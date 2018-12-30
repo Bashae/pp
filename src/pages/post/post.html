@@ -1,10 +1,22 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>post</ion-title>
+    <ion-title></ion-title>
   </ion-navbar>
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <img class="image--user" [src]="post.u.im" alt="">
+      <h3 class="title--user">{{post.u.n}}</h3>
+    </ion-item>
+    
+    <img [src]="post.im" alt="">
 
+    <ion-item>
+      <h2>{{post.ti}}</h2>
+      <p>{{post.d}}</p>
+    </ion-item>
+  </ion-list>
 </ion-content>

@@ -8,6 +8,7 @@ import { OnlineListComponent } from './online-list/online-list';
 import { StreamComponent } from './stream/stream';
 import { CardComponent } from './card/card';
 import { ChatContainerComponent } from './chat-container/chat-container';
+import { CommentsComponent } from './comments/comments';
 
 @NgModule({
 	declarations: [HeaderComponent,
@@ -16,7 +17,8 @@ import { ChatContainerComponent } from './chat-container/chat-container';
     OnlineListComponent,
     StreamComponent,
     CardComponent,
-    ChatContainerComponent],
+    ChatContainerComponent,
+    CommentsComponent],
 	imports: [
 		CommonModule,
 		IonicModule
@@ -27,7 +29,8 @@ import { ChatContainerComponent } from './chat-container/chat-container';
     OnlineListComponent,
     StreamComponent,
     CardComponent,
-    ChatContainerComponent],
+    ChatContainerComponent,
+    CommentsComponent],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class ComponentsModule {}

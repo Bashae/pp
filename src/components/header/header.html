@@ -6,15 +6,18 @@
                 <ion-icon name="power"></ion-icon>
                 </button>
             </ion-col>
-            <ion-col col-1>
+            <ion-col col-2>
+                <button ion-button icon-only class="button--default button--feedback" (click)="openHomePage()">
+                    <ion-icon name="home"></ion-icon>
+                </button>
             </ion-col>
             <ion-col col-2>
-                <button ion-button icon-only class="button--default button--feedback" (click)="openFeedbackModal()">
+                <button ion-button icon-only class="button--default button--feedback" (click)="openDonatePage()">
                     <ion-icon name="cash"></ion-icon>
                 </button>
             </ion-col>
             <ion-col col-2>
-                <button ion-button icon-only class="button--default button--feedback" (click)="openFeedbackModal()">
+                <button ion-button icon-only class="button--default button--feedback" (click)="openFeedbackPage()">
                     <ion-icon name="bug"></ion-icon>
                 </button>
             </ion-col>
@@ -22,8 +25,6 @@
                 <button ion-button icon-only class="button--default button--profile" (click)="goToCurrentUserProfile()">
                     <ion-icon name="person"></ion-icon>
                 </button>
-            </ion-col>
-            <ion-col col-1>
             </ion-col>
             <ion-col col-2>
                 <button ion-button icon-only class="button--default button--location" [class.active]="locatorActive" (click)="toggleLocator()">

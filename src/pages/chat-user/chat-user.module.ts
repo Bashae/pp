@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { ChatUserPage } from './chat-user';
+import { ComponentsModule } from '../../components/components.module';
 
 @NgModule({
   declarations: [
@@ -8,6 +9,7 @@ import { ChatUserPage } from './chat-user';
   ],
   imports: [
     IonicPageModule.forChild(ChatUserPage),
+    ComponentsModule
   ],
 })
 export class ChatUserPageModule {}

@@ -20,6 +20,18 @@ export class HeaderComponent {
     this.events.publish('page:profile');
   }
 
+  openDonatePage(){
+    this.events.publish('page:donate');
+  }
+
+  openFeedbackPage() {
+    this.events.publish('page:feedback');
+  }
+
+  openHomePage() {
+    this.events.publish('page:home');
+  }
+
   toggleLocator() {
     this.locatorActive = !this.locatorActive;
   }

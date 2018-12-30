@@ -31,6 +31,10 @@ import { PostProvider } from '../providers/post/post';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { ChatProvider } from '../providers/chat/chat';
 import { ChatUserPage } from '../pages/chat-user/chat-user';
+import { FeedbackPage } from '../pages/feedback/feedback';
+import { DonatePage } from '../pages/donate/donate';
+import { PostPage } from '../pages/post/post';
+import { CommentsProvider } from '../providers/comments/comments';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyC_f0a9UhqZniUM87FtEKp32FbDJXI7wj8",
@@ -45,9 +49,12 @@ export const firebaseConfig = {
   declarations: [
     MyApp,
     ChatUserPage,
+    DonatePage,
+    FeedbackPage,
     HomePage,
     LandingPage,
     LoginPage,
+    PostPage,
     PostNewPage,
     ProfilePage,
     RegistrationPage,
@@ -63,9 +70,12 @@ export const firebaseConfig = {
   entryComponents: [
     MyApp,
     ChatUserPage,
+    DonatePage,
+    FeedbackPage,
     HomePage,
     LandingPage,
     LoginPage,
+    PostPage,
     PostNewPage,
     ProfilePage,
     RegistrationPage,
@@ -89,7 +99,8 @@ export const firebaseConfig = {
     UsersProvider,
     LoadingProvider,
     PostProvider,
-    ChatProvider
+    ChatProvider,
+    CommentsProvider
   ]
 })
 export class AppModule {}

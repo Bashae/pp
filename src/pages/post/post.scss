@@ -1,3 +1,25 @@
 page-post {
+    padding-top: 65px;
+    .header {
+        position: relative;
+    }
+    .scroll-content {
+        padding-bottom: 0 !important;
+    }
+    .item {
+        padding-left: 0;
+    }
 
+    .image--user {
+        width: 25%;
+        border-radius: 50%;
+        margin: 0 auto;
+        display: block;
+    }
+    .title--user {
+        text-align: center;
+        font-weight: 300;
+        font-size: 20px;
+        margin-top: 10px;
+    }
 }

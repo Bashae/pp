@@ -1,4 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { NavController } from 'ionic-angular';
+import { PostPage } from '../../pages/post/post';
 
 @Component({
   selector: 'card',
@@ -8,12 +10,12 @@ export class CardComponent {
   @Input() post;
   postTime: any;
 
-  constructor() {}
+  constructor(
+    public navCtrl: NavController
+  ) {}
 
   ngOnChanges() {
     this.postTime = this.convertToMins(this.post.time);
-    console.log('what is postTime');
-    console.log(this.postTime);
   }
 
   convertToMins(stamp) {
@@ -31,6 +33,14 @@ export class CardComponent {
     }
     
     return (op + Math.ceil(num));
+  }
+
+  toggleInterested(){
+    console.log('Toggle Interest');
+  }
+
+  viewPost() {
+    this.navCtrl.push(PostPage, {post: this.post});
   }
 
 }
