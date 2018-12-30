@@ -2,4 +2,12 @@ header {
     ion-header {
         background: white;
     }
+
+    .button--location {
+        color: rgba(146, 146, 146, 0.5);
+        
+        &.active {
+            color: red;
+        }
+    }
 }

@@ -1,37 +1,36 @@
 <ion-card>
-
   <ion-item>
     <ion-avatar item-start>
-      <img src="https://firebasestorage.googleapis.com/v0/b/pogo-pal-1532794775743.appspot.com/o/andrew.jpg?alt=media&token=c401c972-fd26-45e8-8caa-2a8524c6050b" alt="">
+      <img [src]="post.u.im" alt="">
+      <!-- <img src="https://firebasestorage.googleapis.com/v0/b/pogo-pal-1532794775743.appspot.com/o/andrew.jpg?alt=media&token=c401c972-fd26-45e8-8caa-2a8524c6050b" alt=""> -->
     </ion-avatar>
-    <h2>Marty McFly</h2>
-    <p>10 Min. ago</p>
+    <h2>{{ post.u.n }}</h2>
+    <p>Posted {{ postTime }} Min. ago</p>
   </ion-item>
 
-  <img src="https://firebasestorage.googleapis.com/v0/b/pogo-pal-1532794775743.appspot.com/o/andrew.jpg?alt=media&token=c401c972-fd26-45e8-8caa-2a8524c6050b" alt="">
+  <img [src]="post.im" *ngIf="post.im" alt="">
 
   <ion-card-content>
-    <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
+    <p>{{ post.d }}</p>
   </ion-card-content>
 
   <ion-row>
     <ion-col>
       <button ion-button icon-start clear small>
-        <ion-icon name="thumbs-up"></ion-icon>
-        <div>12 Likes</div>
+        <ion-icon name="contacts"></ion-icon>
+        <div>{{ post.l }} Interested</div>
       </button>
     </ion-col>
     <ion-col>
       <button ion-button icon-start clear small>
         <ion-icon name="text"></ion-icon>
-        <div>4 Comments</div>
+        <div>{{ post.c }} Comments</div>
       </button>
     </ion-col>
     <ion-col center text-center>
       <ion-note>
-        ~ 1 Mi. away
+        {{ getCeilDistance( post.queryMetadata.distance ) }} Mi. away
       </ion-note>
     </ion-col>
   </ion-row>
-
 </ion-card>

@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { Platform, Events, Nav } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -8,16 +8,19 @@ import { AuthProvider } from '../providers/auth/auth';
 import { HomePage } from '../pages/home/home';
 import { UserProvider } from '../providers/user/user';
 import { GeoProvider } from '../providers/geo/geo';
+import { ProfilePage } from '../pages/profile/profile';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
+  @ViewChild(Nav) nav;
   rootPage:any = LandingPage;
 
   constructor(
     platform: Platform,
     public auth: AuthProvider,
+    public events: Events,
     public geo: GeoProvider,
     public user: UserProvider,
     public statusBar: StatusBar, 
@@ -26,12 +29,19 @@ export class MyApp {
     platform.ready().then(() => {
       this.checkAuthState();
       this.hideScreens();
+      this.setPageEvents();
     });
   }
 
   async checkAuthState() {
     await this.auth.afAuth.authState.subscribe(user => {
       ( user === null ) ? this.unsetUser() : this.setUser(user);
+    })
+  }
+
+  setPageEvents() {
+    this.events.subscribe('page:profile', () => {
+      this.nav.push(ProfilePage, {player: this.user.currentUser});
     })
   }
   

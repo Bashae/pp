@@ -19,12 +19,18 @@ import { RegistrationPage } from '../pages/registration/registration';
 // Firebase and Angularfire
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFireStorage } from '@angular/fire/storage';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { GoogleMaps } from '@ionic-native/google-maps';
 import { StreamProvider } from '../providers/stream/stream';
 import { UsersProvider } from '../providers/users/users';
 import { LoadingProvider } from '../providers/loading/loading';
 import { Geolocation } from '@ionic-native/geolocation';
+import { PostNewPage } from '../pages/post-new/post-new';
+import { PostProvider } from '../providers/post/post';
+import { Camera, CameraOptions } from '@ionic-native/camera';
+import { ChatProvider } from '../providers/chat/chat';
+import { ChatUserPage } from '../pages/chat-user/chat-user';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyC_f0a9UhqZniUM87FtEKp32FbDJXI7wj8",
@@ -38,9 +44,11 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     MyApp,
+    ChatUserPage,
     HomePage,
     LandingPage,
     LoginPage,
+    PostNewPage,
     ProfilePage,
     RegistrationPage,
     UserPage
@@ -54,9 +62,11 @@ export const firebaseConfig = {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    ChatUserPage,
     HomePage,
     LandingPage,
     LoginPage,
+    PostNewPage,
     ProfilePage,
     RegistrationPage,
     UserPage
@@ -68,14 +78,18 @@ export const firebaseConfig = {
     AngularFireModule,
     AngularFireAuth,
     AngularFirestore,
+    AngularFireStorage,
     AuthProvider,
+    Camera,
     GeoProvider,
     Geolocation,
     GoogleMaps,
     UserProvider,
     StreamProvider,
     UsersProvider,
-    LoadingProvider
+    LoadingProvider,
+    PostProvider,
+    ChatProvider
   ]
 })
 export class AppModule {}

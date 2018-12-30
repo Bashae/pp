@@ -1,22 +1,36 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
-/**
- * Generated class for the CardComponent component.
- *
- * See https://angular.io/api/core/Component for more info on Angular
- * Components.
- */
 @Component({
   selector: 'card',
   templateUrl: 'card.html'
 })
 export class CardComponent {
+  @Input() post;
+  postTime: any;
 
-  text: string;
+  constructor() {}
 
-  constructor() {
-    console.log('Hello CardComponent Component');
-    this.text = 'Hello World';
+  ngOnChanges() {
+    this.postTime = this.convertToMins(this.post.time);
+    console.log('what is postTime');
+    console.log(this.postTime);
+  }
+
+  convertToMins(stamp) {
+    let date = Date.now();
+    let diff = (date + stamp);
+    let z = ((diff / 1000) / 60);
+
+    return Math.ceil(z);
+  }
+
+  getCeilDistance(num) {
+    let op = "~ ";
+    if(num < 1) {
+     op = "< ";
+    }
+    
+    return (op + Math.ceil(num));
   }
 
 }

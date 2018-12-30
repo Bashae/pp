@@ -1,22 +1,34 @@
 import { Component } from '@angular/core';
+import { GeoProvider } from '../../providers/geo/geo';
+import { NavController } from 'ionic-angular';
+import { UserPage } from '../../pages/user/user';
 
-/**
- * Generated class for the OnlineListComponent component.
- *
- * See https://angular.io/api/core/Component for more info on Angular
- * Components.
- */
 @Component({
   selector: 'online-list',
   templateUrl: 'online-list.html'
 })
 export class OnlineListComponent {
+  location: any;
+  nearbyPlayers: any;
 
-  text: string;
-
-  constructor() {
-    console.log('Hello OnlineListComponent Component');
-    this.text = 'Hello World';
+  constructor(
+    public geo: GeoProvider,
+    public navCtrl: NavController
+  ) {
+    this.location = this.geo.locationData.subscribe(loc => {
+      this.updateUsers(loc);
+    })
   }
 
+  updateUsers(loc) {
+    if ( loc.lat !== null ) {
+      this.geo.getNearbyActivePlayers(loc.lat, loc.lon).subscribe(res => {
+        this.nearbyPlayers = res;
+      })
+    }
+  }
+
+  goToUserPage(player) {
+    this.navCtrl.push(UserPage, {user: player});
+  }
 }

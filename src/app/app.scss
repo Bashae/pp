@@ -18,11 +18,44 @@
 $primary-background: red;
 $primary-link: red;
 
+$mysticPrimaryColor: #3B4cca;
+$valorPrimaryColor: #FF0000;
+$instinctPrimaryColor: #FFDE00;
+
+$mystic: $mysticPrimaryColor;
+$valor: $valorPrimaryColor;
+$instinct: $instinctPrimaryColor;
+
+.Mystic {background: $mystic;}
+.Valor {background: $valor;}
+.Instinct {background: $instinct;}
+
+.header::after {
+    background-image: none;
+}
+
+.alert, .alert-md {
+    .alert-wrapper {
+        max-width: 90%;
+    }
+}
+
 .button--default {
-    background: transparent;
+    background: white;
     box-shadow: none;
     color: red;
     font-size: 12px;
+}
+.button--border {
+    border: 1px solid red;
+}
+
+.fab[mini] {
+    box-shadow: 0 0 10px;
+}
+.button--fab {
+    background: white;
+    border: 1px solid red;
 }
 
 .scroll-content {

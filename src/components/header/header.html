@@ -6,7 +6,12 @@
                 <ion-icon name="power"></ion-icon>
                 </button>
             </ion-col>
-            <ion-col col-4>
+            <ion-col col-1>
+            </ion-col>
+            <ion-col col-2>
+                <button ion-button icon-only class="button--default button--feedback" (click)="openFeedbackModal()">
+                    <ion-icon name="cash"></ion-icon>
+                </button>
             </ion-col>
             <ion-col col-2>
                 <button ion-button icon-only class="button--default button--feedback" (click)="openFeedbackModal()">
@@ -18,8 +23,10 @@
                     <ion-icon name="person"></ion-icon>
                 </button>
             </ion-col>
+            <ion-col col-1>
+            </ion-col>
             <ion-col col-2>
-                <button ion-button icon-only class="button--default button--location" (click)="toggleLocator()">
+                <button ion-button icon-only class="button--default button--location" [class.active]="locatorActive" (click)="toggleLocator()">
                     <ion-icon name="locate"></ion-icon>
                 </button>
             </ion-col>

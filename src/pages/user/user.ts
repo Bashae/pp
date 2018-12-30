@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the UserPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { UserProvider } from '../../providers/user/user';
+import { ChatUserPage } from '../chat-user/chat-user';
 
 @IonicPage()
 @Component({
@@ -14,12 +9,25 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'user.html',
 })
 export class UserPage {
+  player: any;
+  currentUser: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    public user: UserProvider
+  ) {
+    this.player = this.navParams.get('user');
+    this.currentUser = this.user.currentUser;
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad UserPage');
+  goToChatUserPage() {
+    this.navCtrl.push(ChatUserPage, {
+      data: {
+        r_id: this.player.id,
+        s_id: this.currentUser.ui
+      }
+    })
   }
 
 }

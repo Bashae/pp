@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-slides>
+    <ion-slide>
+      <h1>Do you want to post an image?</h1>
+      <button ion-button round class="button--default button--add-image button--border" (click)="addImage()">Add Image</button>
+      <button ion-button round class="button--default button--no-image button--border" (click)="nextSlide()">Nah, Keep going</button>
+    </ion-slide>
+    <ion-slide>
+      <img [src]="post.im" alt="">
+      <h1>Write your post.</h1>
+      <ion-list>
+        <ion-item>
+          <ion-label stacked>Title</ion-label>
+          <ion-input type="text" [(ngModel)]="post.ti"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>Description</ion-label>
+          <ion-input type="text" [(ngModel)]="post.d"></ion-input>
+        </ion-item>
+        <button ion-button round class="button--default button--submit-post button--border" (click)="submitPost()">Add Post</button>
+      </ion-list>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

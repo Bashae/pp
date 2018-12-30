@@ -91,9 +91,10 @@
     <plugin name="cordova-plugin-admob-free" spec="0.25.0">
         <variable name="ADMOB_APP_ID" value="ca-app-pub-8071301998700750/3005930389" />
     </plugin>
-    <engine name="android" spec="7.1.4" />
-    <engine name="browser" spec="5.0.4" />
     <plugin name="cordova-plugin-geolocation" spec="4.0.1">
         <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="To locate you" />
     </plugin>
+    <plugin name="cordova-plugin-camera" spec="4.0.3" />
+    <engine name="android" spec="7.1.4" />
+    <engine name="browser" spec="5.0.4" />
 </widget>

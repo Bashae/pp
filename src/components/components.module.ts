@@ -7,6 +7,7 @@ import { MapContainerComponent } from './map-container/map-container';
 import { OnlineListComponent } from './online-list/online-list';
 import { StreamComponent } from './stream/stream';
 import { CardComponent } from './card/card';
+import { ChatContainerComponent } from './chat-container/chat-container';
 
 @NgModule({
 	declarations: [HeaderComponent,
@@ -14,7 +15,8 @@ import { CardComponent } from './card/card';
     MapContainerComponent,
     OnlineListComponent,
     StreamComponent,
-    CardComponent],
+    CardComponent,
+    ChatContainerComponent],
 	imports: [
 		CommonModule,
 		IonicModule
@@ -24,7 +26,8 @@ import { CardComponent } from './card/card';
     MapContainerComponent,
     OnlineListComponent,
     StreamComponent,
-    CardComponent],
+    CardComponent,
+    ChatContainerComponent],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class ComponentsModule {}

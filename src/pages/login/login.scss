@@ -1,3 +1,14 @@
 page-login {
-
+    .scroll-content {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+    .title--default {
+        margin-left: 15px;
+    }
+    .cta--default {
+        margin-top: 20px;
+    }
 }

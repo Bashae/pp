@@ -1,0 +1,28 @@
+chat-container {
+    .item {
+        border-bottom: 1px solid #cdcdcd;
+        text-align: center;
+
+        h2 {
+            color: #aaa;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 18px;
+        }
+    }
+    .container--input {
+        background: #f8f8f8;
+        border-top: 1px solid #cdcdcd !important;
+
+        input.text-input{
+            height: 40px;
+        }
+    }
+    ion-thumbnail {
+        img {
+            border-radius: 50%;
+        }
+    }
+}
