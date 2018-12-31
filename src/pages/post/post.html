@@ -14,9 +14,10 @@
     
     <img [src]="post.im" alt="">
 
-    <ion-item>
+    <ion-item class="content--post">
       <h2>{{post.ti}}</h2>
       <p>{{post.d}}</p>
     </ion-item>
   </ion-list>
+  <comments [postId]="post.id"></comments>
 </ion-content>

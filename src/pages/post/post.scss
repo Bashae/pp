@@ -9,6 +9,9 @@ page-post {
     .item {
         padding-left: 0;
     }
+    .item.content--post {
+        text-align: center;
+    }
 
     .image--user {
         width: 25%;

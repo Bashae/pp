@@ -1,17 +1,25 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 
-/*
-  Generated class for the CommentsProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
 export class CommentsProvider {
+  postCollection: AngularFirestoreCollection<any>;
+  commentCollection: AngularFirestoreCollection<any>;
+  commentDoc: AngularFirestoreDocument;
 
-  constructor(public http: HttpClient) {
-    console.log('Hello CommentsProvider Provider');
+  constructor(
+    public afs: AngularFirestore
+  ) {
+    this.postCollection = this.afs.collection('st');
+  }
+
+  getComments(id) {
+    this.commentCollection = this.postCollection.doc(id).collection('co', ref => ref.orderBy('time'));
+    return this.commentCollection;
+  }
+
+  uploadComment(newCom) {
+    return this.commentCollection.add(newCom);
   }
 
 }

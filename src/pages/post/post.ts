@@ -18,8 +18,3 @@ export class PostPage {
   }
 
 }
-
-// c: 0
-// id: "iL82V93jOQL3CJ7CxFns"
-// l: 0
-// time: -12345678

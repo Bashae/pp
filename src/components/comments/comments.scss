@@ -1,3 +1,45 @@
 comments {
+    .item {
+        border-bottom: 1px solid #cdcdcd;
 
+        &.list-header {
+            background: #f8f8f8;
+            text-align: center;
+        }
+    }
+
+    .list {
+        min-height: 50%;
+    }
+    .list .item .item-inner {
+        border-bottom: none;
+    }
+
+    .container--input {
+        background: #f8f8f8;
+        border-top: 1px solid #cdcdcd !important;
+        
+        .label {
+            margin-left: 50px;
+            text-align: center;
+        }
+
+        input.text-input{
+            height: 40px;
+            padding-left: 10px;
+        }
+        .button--chat {
+            background: transparent;
+        }
+    }
+    ion-thumbnail {
+        img {
+            border-radius: 50%;
+        }
+    }
+    .item ion-thumbnail img {
+        width: 60px;
+        height: 60px;
+        margin: 15px auto 0 auto;
+    }
 }

@@ -32,17 +32,39 @@ export class ChatProvider {
   }
 
   getUsersChat(chatLocation) {
-    this.openChatCollection = this.afs.collection('ch')
-                                .doc(chatLocation)
-                                .collection('messages');
-
-    return this.openChatCollection.ref.orderBy("time", "asc").get();
+    this.openChatCollection = this.afs.collection('ch').doc(chatLocation).collection('messages', ref => ref.orderBy('time'));
+    return this.openChatCollection;
   }
 
   sendChatMessage(message) {
-    this.openChatCollection.add(message).then(res => {
-      console.log('sent chat message');
-      console.log(res);
-    })
+    return this.chatCollection.add(message);
   }
 }
+
+
+
+// import { Injectable } from '@angular/core';
+// import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
+
+// @Injectable()
+// export class CommentsProvider {
+//   postCollection: AngularFirestoreCollection<any>;
+//   commentCollection: AngularFirestoreCollection<any>;
+//   commentDoc: AngularFirestoreDocument;
+
+//   constructor(
+//     public afs: AngularFirestore
+//   ) {
+//     this.postCollection = this.afs.collection('st');
+//   }
+
+//   getComments(id) {
+//     this.commentCollection = this.postCollection.doc(id).collection('co', ref => ref.orderBy('time'));
+//     return this.commentCollection;
+//   }
+
+//   uploadComment(newCom) {
+//     return this.commentCollection.add(newCom);
+//   }
+
+// }

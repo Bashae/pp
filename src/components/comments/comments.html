@@ -1,4 +1,17 @@
-<!-- Generated template for the CommentsComponent component -->
-<div>
-  {{text}}
-</div>
+<ion-list>
+  <ion-list-header>
+    Comments
+  </ion-list-header>
+  <ion-item *ngFor="let com of comments">
+    <ion-thumbnail item-start>
+      <img [src]="com.u_im" alt="">
+    </ion-thumbnail>
+    <h2>{{com.u_n}}</h2>
+    <p>{{com.t}}</p>
+  </ion-item>
+</ion-list>
+<ion-item class="container--input" style="position: sticky;bottom: 0;">
+  <ion-label stacked>Message</ion-label>
+  <ion-input type="text" [(ngModel)]="commentText"></ion-input>
+  <button ion-button item-end (click)="submitComment()" class="button--default button--chat">Send</button>
+</ion-item>
