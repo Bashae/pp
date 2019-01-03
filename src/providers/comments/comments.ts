@@ -14,7 +14,7 @@ export class CommentsProvider {
   }
 
   getComments(id) {
-    this.commentCollection = this.postCollection.doc(id).collection('co', ref => ref.orderBy('time'));
+    this.commentCollection = this.postCollection.doc(id).collection('co', ref => ref.orderBy('time', 'desc'));
     return this.commentCollection;
   }
 

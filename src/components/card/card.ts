@@ -1,6 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { PostPage } from '../../pages/post/post';
+import { PostProvider } from '../../providers/post/post';
+import { UserProvider } from '../../providers/user/user';
 
 @Component({
   selector: 'card',
@@ -11,7 +13,9 @@ export class CardComponent {
   postTime: any;
 
   constructor(
-    public navCtrl: NavController
+    public navCtrl: NavController,
+    public posts: PostProvider,
+    public user: UserProvider
   ) {}
 
   ngOnChanges() {
@@ -33,10 +37,6 @@ export class CardComponent {
     }
     
     return (op + Math.ceil(num));
-  }
-
-  toggleInterested(){
-    console.log('Toggle Interest');
   }
 
   viewPost() {

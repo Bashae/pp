@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { CommentsProvider } from '../../providers/comments/comments';
-import { Observable } from 'rxjs';
 import { UserProvider } from '../../providers/user/user';
+import { PostProvider } from '../../providers/post/post';
 
 @Component({
   selector: 'comments',
@@ -14,6 +14,7 @@ export class CommentsComponent {
 
   constructor(
     public commentService: CommentsProvider,
+    public post: PostProvider,
     public user: UserProvider
   ) {}
 
@@ -41,6 +42,7 @@ export class CommentsComponent {
       }
       this.commentService.uploadComment(newCom).then(res => {
         this.commentText = "";
+        this.post.updateCommentCount(this.postId, (this.comments.length))
       })
     }
   }

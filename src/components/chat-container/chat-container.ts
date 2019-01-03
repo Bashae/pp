@@ -28,18 +28,15 @@ export class ChatContainerComponent {
     let actualId, tempChat;
 
     chatId.then(res => {
-      console.log('res');
       if(res) {
-        console.log('res a');
         res.docs.forEach(doc => {
-          console.log('res b');
           actualId = doc.id;
         })
   
-        // tempChat = this.chat.getUsersChat(actualId).valueChanges();
-        // tempChat.forEach(res => {
-        //   this.fullChat = res;
-        // })
+        tempChat = this.chat.getUsersChat(actualId).valueChanges();
+        tempChat.forEach(res => {
+          this.fullChat = res;
+        })
       }
     })
     .catch(err => {

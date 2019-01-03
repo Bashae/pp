@@ -1,3 +1,4 @@
+<map-container [players]="nearbyPlayers"></map-container>
 <ul>
   <li *ngFor="let player of nearbyPlayers" (click)="goToUserPage(player)">
     <img [src]="player.im" alt="">

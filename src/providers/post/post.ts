@@ -7,6 +7,7 @@ import { StreamItem } from '../../app/stream-item';
 @Injectable()
 export class PostProvider {
   streamCollection: AngularFirestoreCollection<StreamItem>;
+  likeCollection: AngularFirestoreCollection<any>;
 
   constructor(
     public afs: AngularFirestore,
@@ -14,6 +15,7 @@ export class PostProvider {
     public loader: LoadingProvider
   ) {
     this.streamCollection = this.afs.collection('st');
+    this.likeCollection = this.afs.collection('likes');
   }
 
   createNewPost(post: StreamItem, pos) {
@@ -49,6 +51,10 @@ export class PostProvider {
     let uuid = this.generateGuid();
 
     return this.storage.ref("/" + uid + "/" + uuid).putString(img, 'data_url');
+  }
+
+  updateCommentCount(id, count) {
+    this.streamCollection.doc(id).update({c: count});
   }
 
   // updateImageUrl(loc, url) {

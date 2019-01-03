@@ -5,31 +5,43 @@ import {
   Marker
 } from '@ionic-native/google-maps';
 
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { GeoProvider } from '../../providers/geo/geo';
 
 @Component({
   selector: 'map-container',
   templateUrl: 'map-container.html'
 })
 export class MapContainerComponent {
+  @Input() players: any;
   public map: GoogleMap;
 
   constructor(
-    public navCtrl: NavController
+    public navCtrl: NavController,
+    public geo: GeoProvider
   ) {}
 
   ngAfterViewInit() {
     // if(this.isLocatorActive) {
     //   this.location.subscribe(res => {
     //     if(res.lat !== null){
-          // this.makeMap(res.lat, res.lon);
-          // this.getNearbyPlayers();
+    //       this.makeMap(res.lat, res.lon);
+    //       this.getNearbyPlayers();
     //     }
     //   })
     // }
 
     this.makeMap();
+  }
+
+  ngOnChanges() {
+    this.addPlayersToMap(this.players);
+  }
+
+  addPlayersToMap(players) {
+    console.log('what are the players');
+    console.log(players);
   }
 
   makeMap() {
@@ -52,22 +64,22 @@ export class MapContainerComponent {
     if(team === 'Instinct') {return 'yellow';}
   }
 
-  // placeMarkers(players) {
-  //   players.forEach(player => {
-  //     let marker: Marker = this.map.addMarkerSync({
-  //       title: player.un,
-  //       icon: this.setMarkerColor(player.t),
-  //       position: {
-  //         lat: player.pos.geopoint.latitude,
-  //         lng: player.pos.geopoint.longitude
-  //       }
-  //     });
+  placeMarkers(players) {
+    players.forEach(player => {
+      let marker: Marker = this.map.addMarkerSync({
+        title: player.un,
+        icon: this.setMarkerColor(player.t),
+        position: {
+          lat: player.pos.geopoint.latitude,
+          lng: player.pos.geopoint.longitude
+        }
+      });
       
-  //     // marker.on(GoogleMapsEvent.MARKER_CLICK).subscribe(() => {
-  //     //   alert('clicked');
-  //     //   some sort of ui interaction with person clicked on
-  //     // });
-  //   });
-  // }
+      // marker.on(GoogleMapsEvent.MARKER_CLICK).subscribe(() => {
+      //   alert('clicked');
+      //   some sort of ui interaction with person clicked on
+      // });
+    });
+  }
 
 }
